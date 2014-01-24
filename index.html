@@ -1,79 +1,52 @@
-<!DOCTYPE html>
-<html>
-
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Laser-doc : laser部分说明文档" />
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Laser-doc</title>
-  </head>
-
-  <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/StoneRen/laser-doc">View on GitHub</a>
-
-          <h1 id="project_title">Laser-doc</h1>
-          <h2 id="project_tagline">laser部分说明文档</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/StoneRen/laser-doc/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/StoneRen/laser-doc/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Laser-doc maintained by <a href="https://github.com/StoneRen">StoneRen</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Laser - 大街网前端架构</title>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;amp;subset=latin,latin-ext">
+		<link media="all" rel="stylesheet" href="css/style.css" type="text/css" />
+	</head>
+	<body class="inner">
+		<section id="content">
+		<header>
+		<section id="logo">
+		<a href="./index.html" title="大街网前端架构">Laser</a>
+		</section>
+		<nav class="clearfix">
+		<a href="./index.html" class="active">Home</a>
+		<a href="./api.html">Api</a>
+		<a href="./git-flow.html">Git-Flow</a>
+		<a href="./deploy.html">Deploy</a>
+		<a href="./link.html">Links</a>
+		</nav>
+		</header>
+		<div id="right">
+			<section>
+			<h3>laser</h3>
+			<p>大街网前端架构,包括前端git工作流程,开发实时编译,自动测试并生成文档.</p>
+			<p>在j架构代码中绝大多数采用开源代码完成,这样在bug修复和文档方面保证实时同步,并且不依赖于个人维护.</p>
+			<p>laser根据大街网实际情况创建了自己的工作流程和代码规范,并开发了大量脚本保证开发人员只需要几个命令就可以轻松使用这套架构</p>
+			<p>以下列表为laser采用的开源代码,特此感谢:</p>
+			<ul>
+				<li>
+				<a href="http://nodejs.org/">nodejs && npm</a>
+				(<a href="https://github.com/joyent/node">git</a>)
+				</li>
+				<li>
+				<a href="http://gruntjs.com/">gruntjs</a>
+				(<a href="https://github.com/gruntjs/">git</a>)
+				</li>
+				<li>
+				<a href="http://seajs.org/">seajs</a>
+				(<a href="https://github.com/seajs/seajs">git</a>)
+				</li>
+				<li>
+				<a href="http://gitlab.org/">gitlab</a>
+				(<a href="https://github.com/gitlabhq/gitlabhq">git</a>)
+				</li>
+			</ul>
+			</section>
+		</div>
+		</section>
+	</body>
 </html>

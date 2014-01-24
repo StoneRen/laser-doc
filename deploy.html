@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Laser - 大街网前端架构</title>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;amp;subset=latin,latin-ext">
+		<link media="all" rel="stylesheet" href="css/style.css" type="text/css" />
+	</head>
+	<body class="inner">
+		<section id="content">
+		<header>
+		<section id="logo">
+		<a href="./index.html" title="大街网前端架构">Laser</a>
+		</section>
+		<nav class="clearfix">
+		<a href="./index.html">Home</a>
+		<a href="./api.html">Api</a>
+		<a href="./git-flow.html">Git-Flow</a>
+		<a href="./deploy.html" class="active">Deploy</a>
+		<a href="./link.html">Links</a>
+		</nav>
+		</header>
+		<ul id="menu">
+			<li>
+			<a href="#merge">merge</a>
+			</li>
+			<li>
+			<a href="#compress">compress</a>
+			</li>
+			<li>
+			<a href="#deploy">deploy</a>
+			</li>
+		</ul>
+		<div id="right">
+			<p>
+				整个发布过程分为3步:
+			</p>
+			<ol>
+				<li>合并代码进主干并同步svn</li>
+				<li>压缩前端文件,生成版本号</li>
+				<li>线上部署</li>
+			</ol>
+			<section id="create">
+				<h3>合并代码同步svn</h3>
+				<p>系统地址: <a href="http://ued.dajie.com:3000/">http://ued.dajie.com:3000/</a></p>
+				<p>本系统的作用:<strong>安全</strong>合并远程分支进master,并同步svn代码</p>
+				<p>本系统有5个功能:</p>
+				<ol>
+					<li>确认远程分支修改文件</li>
+					<li>合并远程分支代码进master</li>
+					<li>删除已经合并进master主干的远程分支</li>
+					<li>同步svn代码(不进行删除操作,如有删除操作可以由`coder manager`操作)</li>
+					<li>备份当前的git代码</li>
+				</ol>
+				<p>注意事项:</p>
+				<ol>
+					<li>因为新旧架构的代码不在一个库下,请确保远程分支名的正确</li>
+					<li>请在登录情况下使用本系统</li>
+					<li>在执行到上面第二步(merge)时候,会锁定全局,所有人此刻无法进行操作,完成后自动解锁.</li>
+				</ol>
+			</section>
+			<section>
+			<h3>压缩文件,生成版本号</h3>
+			<p><span class="code-tip">注意:</span>这个步骤仅用于紧急bug修复和全站前端改动.正常开发上线这一步已经集成在Jenkins中了</p>
+				<p><span class="code-tip">TODO:</span>可集成到merge系统</p>
+				<p>操作步骤:</p>
+				<ul>
+					<li>登录服务器 192.168.10.10</li>
+					<p>普通更新:</p>
+					<li>cd /ROOT/scripts/process_assets_files/compress_css_and_js/</li>
+					<li>./compress_css_and_js.sh assets/$PATH online </li>
+					<p>合并文件执行命令:</p>
+					<li>cd /ROOT/scripts/process_assets_files/merge_css_and_js/</li>
+					<li>./merge_css_and_js.sh online</li>
+				</ul>
+			</section>
+	</body>
+</html>

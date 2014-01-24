@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Laser - 大街网前端架构</title>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;amp;subset=latin,latin-ext">
+		<link media="all" rel="stylesheet" href="css/style.css" type="text/css" />
+	</head>
+	<body class="inner">
+		<section id="content">
+		<header>
+		<section id="logo">
+		<a href="./index.html" title="大街网前端架构">Laser</a>
+		</section>
+		<nav class="clearfix">
+		<a href="./index.html">Home</a>
+		<a href="./api.html" class="active">Api</a>
+		<a href="./git-flow.html">Git-Flow</a>
+		<a href="./deploy.html">Deploy</a>
+		<a href="./link.html">Links</a>
+		</nav>
+		</header>
+		<ul id="menu">
+			<li>
+			<a href="#config">config</a>
+			</li>
+			<li>
+			<a href="#create">create</a>
+			</li>
+			<li>
+			<a href="#dev">dev</a>
+			</li>
+			<li>
+			<a href="#update">update</a>
+			</li>
+			<li>
+			<a href="#git">git</a>
+			</li>
+		</ul>
+		<div id="right">
+			<p>
+				<span class="code-tip">注意:</span>以下命令均在根目录下执行
+			</p>
+			<section>
+			<h3 id="config">laser config</h3>
+			<p><code>Usage: laser-config &lt;command&gt; [options]</code></p>
+			<p><code>Commands: init</code></p>
+			<p>初始化配置</p>
+			<p>`init`: 现在用于生成<code>developer.json</code></p>
+			<p>在新架构中,需要有<code>developer.json</code>个人开发者配置文件,使用这个命令快速生成</p>
+			
+			<pre class="js"><code>
+laser config init
+确认上面的配置(<span class="code-tip">y/n</span>)?n
+<span class="comment">// 在新架构根目录下,执行这个命令.然后修改author和email属性</span>
+<span></span>
+<span class="comment">// step 2:安装所需组件</span>
+npm install
+</code></pre>
+			<p>配置完开发者信息后,需要使用<code>npm install</code>进行安装</p>
+			</section>
+			<section id="create">
+				<h3>laser create</h3>
+				<p><code>Usage: laser-create &lt;project&gt;</code></p>
+				<p>创建一个新项目</p>
+				<p>新架构的目录结构是以项目来区分的,并且每个新项目有固定的组织结构,和编译时候,用到的各种配置文件.通过<code>laser create</code>可以快速生成一个项目模板文件</p>
+				<pre class="js"><code>laser create test
+<span class="code-ok">>></span> 新项目创建完成
+laser create test
+<span class="code-err">>></span> 已经存在 <span class="code-tip">test</span> 项目
+<span></span>
+<span class="comment">// step 2:安装所需组件</span>
+cd test && npm install</code>
+				</pre>
+			</section>
+			<section id="dev">
+				<h3>laser dev</h3>
+				<p><code>Usage: laser-dev &lt;project&gt; [options]</code></p>
+				<p>在开发过程中监听文件变动,并进行实时检测和编译</p>
+				<p class="code-tip">注意:</p>
+				<ul>
+					<li>在新架构根目录下执行本命令</li>
+					<li>请确认要开发的项目中,已经执行过<code>npm install</code></li>
+				</ul>
+				<pre class="js"><code>laser dev test
+Running "watch" task
+Waiting...
+<span class="comment">// 结束按`ctrl+c`,在win下,有时需要快速按2次</span>
+</code>
+				</pre>
+			</section>
+			<section id="update">
+				<h3>laser update</h3>
+				<p><code>Usage: laser update</code></p>
+				<p>脚本及小工具的更新命令</p>
+				<p>在架构源代码提交到master分支的时候,会自动生成文件更新列表,其他人只需要在本地执行<code>laser update</code>就可</p>
+				<pre class="js"><code>laser update
+http://192.168.11.99/laser/uptag
+[=================================================] 100% 0.0s
+...
+...
+http://192.168.11.99/laser/bin/uptag
+[=================================================] 100% 0.0s
+更新完成
+<span></span>
+laser update
+http://192.168.11.99/laser/uptag
+[=================================================] 100% 0.0s
+你使用的是最新版,不需要下载
+
+</code>
+				</pre>
+			</section>
+			<section id="git">
+				<h3>laser git</h3>
+				<p><code>Usage: laser git &lt;command&gt;</code></p>
+				<p>工作流工具,详细功能在<a href='git-flow.html#laser.git'>工作流</a>中介绍</p>
+				<ul>
+					<li>laser git new</li>
+					<li>laser git merge</li>
+					<li>laser git push</li>
+				</ul>
+			</section>
+		</div>
+		</section>
+	</body>
+</html>
