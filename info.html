@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Laser - 大街网前端架构</title>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;amp;subset=latin,latin-ext">
+		<link media="all" rel="stylesheet" href="css/style.css" type="text/css" />
+	</head>
+	<body class="inner">
+		<section id="content">
+		<header>
+		<section id="logo">
+		<a href="./index.html" title="大街网前端架构">Laser</a>
+		</section>
+		<nav class="clearfix">
+		<a href="./index.html">Home</a>
+		<a href="./api.html">Api</a>
+		<a href="./git-flow.html">Git-Flow</a>
+		<a href="./deploy.html">Deploy</a>
+		<a href="./info.html">Info</a>
+		</nav>
+		</header>
+
+		<div id="right">
+			<section>
+			<h3>相关链接</h3>
+			<ul>
+				<li><a href="http://nodejs.org/">nodejs && npm</a></li>
+				<li>
+				<a href="http://msysgit.github.io/">msysgit</a>
+				</li>
+				<li><a href="http://ued.dajie.com">git库</a></li>
+				<li>
+				<a href="http://ued.dajie.com:3000">前端合并系统</a>
+				</li>
+				<li>
+				<a href="http://ued.dajie.com/ued/doc/wikis/home">前端分享wiki</a>
+				</li>
+			</ul>
+			</section>
+
+			<section id="graphical-show">
+			<h3>图示说明:</h3>
+			<ul>
+				<li>
+				<h4>大街网代码存储</h4>
+				<p>具体分支规范可以参考 <a href="#">dj-git.flow.md</a></p>
+				<p>保证主干代码没有人为操作,主干代码的操作全都是自动化</p>
+				<img src="image/laser-code-store.jpg" alt="大街网代码存储" />
+				</li>
+				<li>
+				<h4>大街网前端开发流程</h4>
+				<p>整体流程为: 开发环境 &rarr; 联调环境 &rarr; 沙盒环境 &rarr; 预发布环境 &rarr; 线上环境</p>
+				<ul>
+					<li><strong>联调环境</strong> : 后端采用后端开发环境,获取前端分支代码</li>
+					<li><strong>沙盒环境</strong> : 前端提供项目分支名称,QA部署前端代码到沙盒环境</li>
+					<li><strong>预发布环境</strong> : 前端通过合并系统合并分支代码进主干,QA部署前端代码到预发布环境</li>
+				</ul>
+				<img src="image/laser-dev-flow.jpg" alt="大街网前端开发流程" />
+				</li>
+				<li>
+				<h4>大街网前端代码流转过程</h4>
+				<p><span class="code-tip">旧:</span>在之前的流程中,`代码管理员`对代码审核后,通过建立'git tag'的方式进行合并和发布,这个虽然也实现了自动化,但还是比较繁琐.</p>
+				<p>本流程通过两个脚本'/laser/deploy.sh'和'/.git/hooks/post-update'控制</p>
+				<ul>
+					<li>'<strong>/laser/deploy.sh</strong>' : 自动更新主干代码,与远程分支代码合并后提交master代码</li>
+					<li>'<strong>/.git/hooks/post-update</strong>' : 对tag进行监听,同步svn,备份前端代码</li>
+				</ul>
+				
+				<img src="image/laser-code-flow-old.jpg" alt="大街网前端代码流转过程-旧" />
+				<p><span class="code-tip">新:</span>通过`自动合并系统`,只需要点击2个按钮就可以合并分支代码到主干.并且实现了自动安全检测,自动合并svn代码,自动备份代码.通过'<a href="http://ued.dajie.com:3000">自动合并系统</a></p>
+				<p>本系统源代码已经放到git仓库里了,查看请访问: <a href="http://ued.dajie.com/ued/auto-deploy">http://ued.dajie.com/ued/auto-deploy</a></p>
+				<p>本系统主要通过以下文件实现操作:</p>
+				<ul>
+					<li>'<strong>/api/controllers/EchoController.js</strong>' : 通过客户端请求调用不同流程,实现全局即时锁定和解锁</li>
+					<li>'<strong>/workspace/diff.sh</strong>' : 进行安全检测</li>
+					<li>'<strong>/workspace/merge.sh</strong>' : 安全合并代码进主干,备份代码,同步svn.在合并代码过程中,会调用'EchoController.js'锁定全局,合并完成后通知解锁</li>
+				</ul>
+				<img src="image/laser-code-flow-new.jpg" alt="大街网前端代码流转过程-新" />
+
+				</li>
+			</ul>
+			</section>
+		</div>
+	</body>
+</html>

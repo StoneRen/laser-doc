@@ -17,7 +17,7 @@
 		<a href="./api.html">Api</a>
 		<a href="./git-flow.html">Git-Flow</a>
 		<a href="./deploy.html" class="active">Deploy</a>
-		<a href="./link.html">Links</a>
+		<a href="./info.html">Info</a>
 		</nav>
 		</header>
 		<ul id="menu">
@@ -40,7 +40,7 @@
 				<li>压缩前端文件,生成版本号</li>
 				<li>线上部署</li>
 			</ol>
-			<section id="create">
+			<section id="merge">
 				<h3>合并代码同步svn</h3>
 				<p>系统地址: <a href="http://ued.dajie.com:3000/">http://ued.dajie.com:3000/</a></p>
 				<p>本系统的作用:<strong>安全</strong>合并远程分支进master,并同步svn代码</p>
@@ -59,7 +59,7 @@
 					<li>在执行到上面第二步(merge)时候,会锁定全局,所有人此刻无法进行操作,完成后自动解锁.</li>
 				</ol>
 			</section>
-			<section>
+			<section id='compress'>
 			<h3>压缩文件,生成版本号</h3>
 			<p><span class="code-tip">注意:</span>这个步骤仅用于紧急bug修复和全站前端改动.正常开发上线这一步已经集成在Jenkins中了</p>
 				<p><span class="code-tip">TODO:</span>可集成到merge系统</p>

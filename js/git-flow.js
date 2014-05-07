@@ -33,8 +33,8 @@ var position = {
 
 var circleList = {};
 var svgs = {
-	'sigle': d3.select('#sigle').append('svg').attr('height', 400).attr('data-name', 'sigle'),
-	'multi': d3.select('#multi').append('svg').attr('height', 400).attr('data-name', 'multi')
+	'sigle': d3.select('#sigle').append('svg').attr('height', 400).attr('width', 600).attr('data-name', 'sigle'),
+	'multi': d3.select('#multi').append('svg').attr('height', 400).attr('width', 600).attr('data-name', 'multi')
 }
 
 function createCircle(type, node, src) {
